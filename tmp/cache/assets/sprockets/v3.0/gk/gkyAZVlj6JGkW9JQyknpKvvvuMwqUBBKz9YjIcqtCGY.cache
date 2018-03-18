@@ -1,0 +1,10 @@
+I"œ(function() {
+  jQuery(function() {
+    return $('#datepicker').datepicker({
+      minDate: 0,
+      dateFormat: 'dd-mm-YYYY'
+    });
+  });
+
+}).call(this);
+:ET

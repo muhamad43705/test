@@ -1,0 +1,151 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .	
+ *= require_self
+ *= require jquery-ui/datepicker
+ */
+
+/*font*/
+@font-face {
+    font-family: 'PT Sans Narrow';
+    src: url(/assets/PT_Sans-Narrow-Web-Regular.ttf) format("truetype");
+    font-weight: normal; 
+} 
+
+@font-face {
+    font-family: 'PT Sans Narrow';
+    src: url(/assets/PT_Sans-Narrow-Web-Bold.ttf) format("truetype");
+    font-weight: bold; 
+} 
+
+@font-face {
+    font-family: 'Palanquin';
+    src: url(/assets/Palanquin-Light.ttf);
+    font-weight: 300; 
+}
+
+
+html,body{
+	margin:0;
+	padding:0;
+	border:0;
+	height:100%;
+	font-size:14px;
+	font-family:'PT Sans Narrow', sans-serif; color:#333;
+}
+
+h2{
+	font-size:1.5em;  
+	margin:0.2em 0em 0.1em 0em; 
+	padding:0em; 
+	font-family:'PT Sans Narrow'; 
+	font-weight:normal; 
+	text-align: center;
+}
+a{
+	color: #428bca;
+	text-decoration: none;
+}
+
+#header {
+	padding: 10px 16px;
+	background-color: #428bca;
+	min-height: 50px;
+}
+
+.title {
+	color: #f1f1f1;
+	float: left;
+}
+
+.logout, .logged {
+	color: #f1f1f1;
+	float: right;
+	margin-right: 20px;
+}
+
+.logout a{
+	color: #f1f1f1;
+}
+
+.logout a:hover{
+	color: red;
+}
+
+#body-login, #form-wrapper { 
+	top: 15vh; 
+	position:relative; 
+	width:400px; 
+	margin:auto; 
+	margin-bottom: 100px;
+}
+
+input[type=email], input[type=password], input[type=text], textarea, select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+textarea {
+    height: 100px;
+}
+
+select {
+	background-color: #fff;
+}
+
+input[type=submit], button {
+    background-color: #428bca;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 4px;
+}
+
+input[type=submit]:hover, button:hover {
+    opacity: 0.8;
+}
+
+.notice, .alert, #error_explanation {
+	background-color: #C41E3A ;
+	color: #f1f1f1 !important;
+	margin-bottom: 5px;
+	padding: 10px;
+}
+
+.title-form, .title-page{
+	margin-bottom: 20px;
+	height: 40px;
+	border-bottom: 1px solid #ccc;
+}
+
+#wrapper{
+	top: 5vh; 
+	width:1000px;
+	position:relative;
+	margin: auto;
+	margin-bottom: 100px;
+}
+
+.btn-create-new {
+	width: 100px;
+	float: right;
+	margin-bottom: 10px;
+}

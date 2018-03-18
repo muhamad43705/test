@@ -1,0 +1,11 @@
+I"½(function() {
+  $(document).on("turbolinks:load", function() {});
+
+  jQuery(function() {
+    return $('#datepicker').datepicker({
+      dateFormat: 'dd-mm-yy'
+    });
+  });
+
+}).call(this);
+:ET

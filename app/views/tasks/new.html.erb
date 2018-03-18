@@ -1,0 +1,39 @@
+ <div id="form-wrapper">
+  <h2 class="title-form">Create Task</h2>
+  <% if @task.errors.any? %>
+    <div class="notice">
+      <% @task.errors.full_messages.each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+  <% end %>
+
+  <%= form_for(@task) do |f| %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <div class="field">
+    <%= f.label :Status %><br />
+    <%= f.select(:status, Task::STATUS_LIST) %>
+    </div>
+    <div class="field">
+    <%= f.label :Priority %><br />
+    <%= f.select(:priority, Task::PRIORITY_LIST) %>
+    </div>
+    <div class="field">
+    <%= f.label :Duedate %><br />
+    <%= f.text_field :duedate, :id => 'datepicker', :value => Date.today.strftime('%d-%m-%Y') %>
+    </div>
+    <div class="field">
+			<%= f.label :Title %><br />
+      <%= f.text_field :title, autofocus: true %>
+    </div>
+    <div class="field">
+			<%= f.label :Description %><br />
+      <%= f.text_area :description %>
+    </div>
+    
+    <div class="actions">
+      <%= f.submit "Save" %>
+    </div>
+  <% end %>
+
+</div>

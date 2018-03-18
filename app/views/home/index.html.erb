@@ -1,0 +1,41 @@
+<%= render "home/header" %>
+
+<div id="wrapper">
+	<h2 class="title-page">Tasks</h2>
+	<div class="btn-create-new"><%= link_to '<button type="button">New Task</button>'.html_safe, {controller: 'tasks', action: 'new'} %></div>
+	<div style="clear:both"></div>
+	<div style="margin-bottom: 20px">
+		<% if alert %>
+	    <p class="alert"><%= alert %></p>
+	  <% end %>
+	</div>
+	<table class="table table-bordered table-striped">
+	  <thead>
+	    <tr>
+	      <th><%= sort_link "title" %></th>
+	      <th><%= sort_link "description" %></th>
+	      <th><%= sort_link "duedate" %></th>
+	      <th><%= sort_link "priority" %></th>
+	      <th><%= sort_link "status" %></th>
+	      <th class="table-header">Actions</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <% @tasks.each do |task| %>
+	    <% if task.status == 'Open' %>
+      	<tr style="color: blue;">
+      <% else %>
+      	<tr>
+    	<% end %> 
+	      
+	        <td><%= task.title %></td>
+	        <td><%= task.description %></td>
+	        <td><%= task.duedate.strftime('%d-%m-%Y') %></td>
+	        <td><%= task.priority %></td>
+	        <td><%= task.status %></td>
+	        <td class="table-data"><%= link_to 'View/Edit', {controller: 'tasks', action: 'edit', id: task.id} %>  |  <%= link_to 'Delete', {controller: 'tasks', action: 'destroy', id: task.id}, method: :delete %></td>
+	      </tr>
+	    <% end %>
+	  </tbody>
+	</table>
+</div>

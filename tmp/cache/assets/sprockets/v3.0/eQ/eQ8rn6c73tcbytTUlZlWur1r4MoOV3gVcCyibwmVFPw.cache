@@ -1,0 +1,7 @@
+I"f(function() {
+  jquery(function() {
+    return $('#duedate').datepicker();
+  });
+
+}).call(this);
+:ET
