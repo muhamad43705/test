@@ -24684,3 +24684,1132 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 52ms (Views: 45.1ms | ActiveRecord: 1.7ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-03-18 23:51:20 +0700
+  [1m[35m (64.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-03-18 23:51:21 +0700
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (35.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/home
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 269ms (ActiveRecord: 121.3ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-03-18 23:51:21 +0700
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/home
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-03-18 23:51:21 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (20.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-18') AND (user_id = 1) AND (status = 'Open')[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_header.html.erb (1.2ms)
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) ORDER BY title asc[0m
+  Rendered home/index.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 837ms (Views: 781.0ms | ActiveRecord: 29.4ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-03-18 23:51:22 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-18') AND (user_id = 1) AND (status = 'Open')[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_header.html.erb (2.3ms)
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) ORDER BY title asc[0m
+  Rendered home/index.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 142ms (Views: 135.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/home?column=description&direction=asc" for 127.0.0.1 at 2018-03-18 23:51:34 +0700
+Processing by HomeController#index as HTML
+  Parameters: {"column"=>"description", "direction"=>"asc"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-18') AND (user_id = 1) AND (status = 'Open')[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_header.html.erb (1.4ms)
+  [1m[36mTask Load (1.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) ORDER BY description asc[0m
+  Rendered home/index.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 93ms (Views: 84.9ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/home?column=description&direction=desc" for 127.0.0.1 at 2018-03-18 23:51:35 +0700
+Processing by HomeController#index as HTML
+  Parameters: {"column"=>"description", "direction"=>"desc"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-18') AND (user_id = 1) AND (status = 'Open')[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_header.html.erb (0.9ms)
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) ORDER BY description desc[0m
+  Rendered home/index.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 78ms (Views: 71.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-19 06:49:25 +0700
+  [1m[35m (42.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-03-19 06:49:26 +0700
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (33.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/home
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 269ms (ActiveRecord: 117.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-03-19 06:49:27 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (19.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-19') AND (user_id = 1) AND (status = 'Open')[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_header.html.erb (1.0ms)
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) ORDER BY title asc[0m
+  Rendered home/index.html.erb within layouts/application (32.3ms)
+Completed 200 OK in 1894ms (Views: 1829.9ms | ActiveRecord: 26.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-20 15:07:52 +0700
+  [1m[35m (42.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-03-20 15:07:53 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (178.2ms)
+Completed 200 OK in 860ms (Views: 751.5ms | ActiveRecord: 66.7ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-03-20 15:08:04 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DdvdZ0Brlck6jCyuPeqokhtGsgJalfv9JD8qZUlw5YdqdGI6wnVB32pJYd6iK293Hc4ii8EIR/IrGlnDr12WKw==", "user"=>{"email"=>"muhamad43705@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (125.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "muhamad43705@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", "2018-03-20 08:08:04.493359"], ["last_sign_in_at", "2018-03-18 02:32:25.137578"], ["sign_in_count", 42], ["updated_at", "2018-03-20 08:08:04.495170"], ["id", 1]]
+  [1m[35m (4.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/home
+Completed 302 Found in 445ms (ActiveRecord: 130.7ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-03-20 15:08:04 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (9.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-20') AND (user_id = 1) AND (status = 'Open')[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_header.html.erb (0.8ms)
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) ORDER BY title asc[0m
+  Rendered home/index.html.erb within layouts/application (33.3ms)
+Completed 200 OK in 120ms (Views: 67.3ms | ActiveRecord: 17.9ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-03-20 15:08:10 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-20') AND (user_id = 1) AND (status = 'Open')[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_header.html.erb (0.4ms)
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) ORDER BY title asc[0m
+  Rendered home/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 56ms (Views: 51.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2018-03-20 15:08:30 +0700
+Processing by TasksController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/new.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 56ms (Views: 51.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2018-03-20 15:08:44 +0700
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e5cUXSoh8JIcdqHyXHYlwdcRGVVL5sEtgoeZVQBJCh2HL+FSGe4s86nD1PjyIp3LJWPHoN1A0xltHR2/IvQOrQ==", "task"=>{"user_id"=>"1", "status"=>"Open", "priority"=>"Medium", "duedate"=>"20-03-2018", "title"=>"tes task", "description"=>"desc test"}, "commit"=>"Save"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (63.1ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "description", "duedate", "priority", "status", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "tes task"], ["description", "desc test"], ["duedate", "2018-03-20"], ["priority", "Medium"], ["status", "Open"], ["created_at", "2018-03-20 08:08:44.548957"], ["updated_at", "2018-03-20 08:08:44.548957"], ["user_id", 1]]
+  [1m[35m (75.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/home
+Completed 302 Found in 147ms (ActiveRecord: 138.9ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-03-20 15:08:44 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-20') AND (user_id = 1) AND (status = 'Open')[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_header.html.erb (0.5ms)
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) ORDER BY title asc[0m
+  Rendered home/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 51ms (Views: 46.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-03-20 15:11:02 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-20') AND (user_id = 1) AND (status = 'Open')[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_header.html.erb (0.4ms)
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) ORDER BY title asc[0m
+  Rendered home/index.html.erb within layouts/application (253.0ms)
+Completed 401 Unauthorized in 260ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `tasks_duetoday' for #<#<Class:0x00007f8ce41559c8>:0x00007f8cd51185a0>
+Did you mean?  @tasks_duetoday):
+    28:       	<tr>
+    29:     	<% end %> 
+    30: 	      
+    31: 	        <td><%= tasks_duetoday.title %></td>
+    32: 	        <td><%= tasks_duetoday.description %></td>
+    33: 	        <td><%= tasks_duetoday.duedate.strftime('%d-%m-%Y') %></td>
+    34: 	        <td><%= tasks_duetoday.priority %></td>
+  
+app/views/home/index.html.erb:31:in `block in _app_views_home_index_html_erb___4321739185533681206_70121423425760'
+app/views/home/index.html.erb:24:in `_app_views_home_index_html_erb___4321739185533681206_70121423425760'
+Started GET "/home" for 127.0.0.1 at 2018-03-20 15:11:16 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-20') AND (user_id = 1) AND (status = 'Open')[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_header.html.erb (0.8ms)
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE (user_id = 1) ORDER BY title asc LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE (user_id = 1) ORDER BY title asc LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE (user_id = 1) ORDER BY title asc LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE (user_id = 1) ORDER BY title asc LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE (user_id = 1) ORDER BY title asc LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE (user_id = 1) ORDER BY title asc LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE (user_id = 1) ORDER BY title asc LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE (user_id = 1) ORDER BY title asc LIMIT $1[0m  [["LIMIT", 11]]
+  Rendered home/index.html.erb within layouts/application (283.3ms)
+Completed 401 Unauthorized in 290ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `tasks_duetoday' for #<#<Class:0x00007f8ce41559c8>:0x00007f8ce4184fe8>
+Did you mean?  @tasks_duetoday):
+    28:       	<tr>
+    29:     	<% end %> 
+    30: 	      
+    31: 	        <td><%= tasks_duetoday.title %></td>
+    32: 	        <td><%= tasks_duetoday.description %></td>
+    33: 	        <td><%= tasks_duetoday.duedate.strftime('%d-%m-%Y') %></td>
+    34: 	        <td><%= tasks_duetoday.priority %></td>
+  
+app/views/home/index.html.erb:31:in `block in _app_views_home_index_html_erb___4321739185533681206_70121549474980'
+app/views/home/index.html.erb:24:in `_app_views_home_index_html_erb___4321739185533681206_70121549474980'
+Started GET "/home" for 127.0.0.1 at 2018-03-20 15:11:33 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-20') AND (user_id = 1) AND (status = 'Open')[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_header.html.erb (0.7ms)
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE (user_id = 1) ORDER BY title asc LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE (user_id = 1) ORDER BY title asc LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE (user_id = 1) ORDER BY title asc LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE (user_id = 1) ORDER BY title asc LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE (user_id = 1) ORDER BY title asc LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE (user_id = 1) ORDER BY title asc LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE (user_id = 1) ORDER BY title asc LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE (user_id = 1) ORDER BY title asc LIMIT $1[0m  [["LIMIT", 11]]
+  Rendered home/index.html.erb within layouts/application (266.5ms)
+Completed 401 Unauthorized in 276ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `tasks_duetoday' for #<#<Class:0x00007f8ce41559c8>:0x00007f8ce80923c0>
+Did you mean?  @tasks_duetoday):
+    22: 	  </thead>
+    23: 	  <tbody>
+    24: 	    <% @tasks_duetoday.each do |task| %>
+    25: 	    <% if tasks_duetoday.status == 'Open' %>
+    26:       	<tr style="color: blue;">
+    27:       <% else %>
+    28:       	<tr>
+  
+app/views/home/index.html.erb:25:in `block in _app_views_home_index_html_erb___4321739185533681206_70121582532240'
+app/views/home/index.html.erb:24:in `_app_views_home_index_html_erb___4321739185533681206_70121582532240'
+Started GET "/home" for 127.0.0.1 at 2018-03-20 15:12:17 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-20') AND (user_id = 1) AND (status = 'Open')[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_header.html.erb (0.5ms)
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE (user_id = 1) ORDER BY title asc LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE (user_id = 1) ORDER BY title asc LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE (user_id = 1) ORDER BY title asc LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE (user_id = 1) ORDER BY title asc LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE (user_id = 1) ORDER BY title asc LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE (user_id = 1) ORDER BY title asc LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE (user_id = 1) ORDER BY title asc LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE (user_id = 1) ORDER BY title asc LIMIT $1[0m  [["LIMIT", 11]]
+  Rendered home/index.html.erb within layouts/application (258.3ms)
+Completed 401 Unauthorized in 264ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `tasks_duetoday' for #<#<Class:0x00007f8ce41559c8>:0x00007f8ce44b7698>
+Did you mean?  @tasks_duetoday):
+    22: 	  </thead>
+    23: 	  <tbody>
+    24: 	    <% @tasks_duetoday.each do |task| %>
+    25: 	    <% if tasks_duetoday.status == 'Open' %>
+    26:       	<tr style="color: blue;">
+    27:       <% else %>
+    28:       	<tr>
+  
+app/views/home/index.html.erb:25:in `block in _app_views_home_index_html_erb___4321739185533681206_70121551165780'
+app/views/home/index.html.erb:24:in `_app_views_home_index_html_erb___4321739185533681206_70121551165780'
+Started GET "/home" for 127.0.0.1 at 2018-03-20 15:12:37 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-20') AND (user_id = 1) AND (status = 'Open')[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_header.html.erb (0.8ms)
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) ORDER BY title asc[0m
+  Rendered home/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 69ms (Views: 64.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-03-20 15:13:24 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-20') AND (user_id = 1) AND (status = 'Open')[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_header.html.erb (0.4ms)
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) ORDER BY title asc[0m
+  Rendered home/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 53ms (Views: 47.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-03-20 15:15:35 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 401 Unauthorized in 29ms (ActiveRecord: 5.7ms)
+
+
+  
+NoMethodError (undefined method `length' for nil:NilClass):
+  
+app/controllers/home_controller.rb:8:in `index'
+Started GET "/home" for 127.0.0.1 at 2018-03-20 15:16:09 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.8ms)
+
+
+  
+NoMethodError (undefined method `length' for nil:NilClass):
+  
+app/controllers/home_controller.rb:8:in `index'
+Started GET "/home" for 127.0.0.1 at 2018-03-20 15:19:16 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 401 Unauthorized in 25ms (ActiveRecord: 4.5ms)
+
+
+  
+NoMethodError (undefined method `length' for nil:NilClass):
+  
+app/controllers/home_controller.rb:8:in `index'
+Started GET "/home" for 127.0.0.1 at 2018-03-20 15:19:17 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.4ms)
+
+
+  
+NoMethodError (undefined method `length' for nil:NilClass):
+  
+app/controllers/home_controller.rb:8:in `index'
+Started GET "/home" for 127.0.0.1 at 2018-03-20 15:19:39 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) ORDER BY title asc[0m
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-20') AND (user_id = 1) AND (status = 'Open')[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_header.html.erb (0.5ms)
+  Rendered home/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 94ms (Views: 52.4ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-03-20 15:20:02 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) ORDER BY title asc[0m
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-20') AND (user_id = 1) AND (status = 'Open')[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_header.html.erb (0.5ms)
+  Rendered home/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 80ms (Views: 41.9ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-03-20 15:20:09 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) ORDER BY title asc[0m
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-20') AND (user_id = 1) AND (status = 'Open')[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_header.html.erb (0.6ms)
+  Rendered home/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 95ms (Views: 52.5ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-03-20 15:21:36 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-20') AND (user_id = 1) AND (status = 'Open')[0m
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) AND (duedate != '2018-03-20') ORDER BY title asc[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_header.html.erb (0.6ms)
+  Rendered home/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 87ms (Views: 46.4ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2018-03-20 15:31:15 +0700
+Processing by TasksController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 57ms (Views: 52.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/home?column=duedate&direction=asc" for 127.0.0.1 at 2018-03-20 15:31:55 +0700
+Processing by HomeController#index as HTML
+  Parameters: {"column"=>"duedate", "direction"=>"asc"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-20') AND (user_id = 1) AND (status = 'Open')[0m
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) AND (duedate != '2018-03-20') ORDER BY duedate asc[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_header.html.erb (0.8ms)
+  Rendered home/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 55ms (Views: 48.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/home?column=status&direction=asc" for 127.0.0.1 at 2018-03-20 15:31:58 +0700
+Processing by HomeController#index as HTML
+  Parameters: {"column"=>"status", "direction"=>"asc"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-20') AND (user_id = 1) AND (status = 'Open')[0m
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) AND (duedate != '2018-03-20') ORDER BY status asc[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_header.html.erb (1.0ms)
+  Rendered home/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 59ms (Views: 53.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-21 11:33:13 +0700
+  [1m[35m (116.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-03-21 11:33:16 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (470.4ms)
+Completed 200 OK in 2461ms (Views: 2263.1ms | ActiveRecord: 155.2ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-03-21 11:33:25 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ckA/K+2UXLdXL7axTXJ2WlArbk5DqtFlq7cwyzPffSPv0c60pBiK31gZT9683GcE5ybbDdDRDDBlP48FCVBuzQ==", "user"=>{"email"=>"muhamad43705@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (118.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "muhamad43705@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", "2018-03-21 04:33:26.253800"], ["last_sign_in_at", "2018-03-20 08:08:04.493359"], ["sign_in_count", 43], ["updated_at", "2018-03-21 04:33:26.255034"], ["id", 1]]
+  [1m[35m (14.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/home
+Completed 302 Found in 609ms (ActiveRecord: 133.2ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-03-21 11:33:26 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (71.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-21') AND (user_id = 1) AND (status = 'Open')[0m
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) AND (duedate != '2018-03-21') ORDER BY title asc[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_header.html.erb (0.5ms)
+  Rendered home/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 165ms (Views: 61.7ms | ActiveRecord: 81.3ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-03-21 11:35:52 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-21') AND (user_id = 1) AND (status = 'Open')[0m
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) AND (duedate != '2018-03-21') ORDER BY title asc[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_header.html.erb (0.8ms)
+  Rendered home/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 92ms (Views: 46.3ms | ActiveRecord: 11.1ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-03-21 11:35:56 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-21') AND (user_id = 1) AND (status = 'Open')[0m
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) AND (duedate != '2018-03-21') ORDER BY title asc[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_header.html.erb (0.5ms)
+  Rendered home/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 64ms (Views: 57.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-03-21 11:35:59 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-21') AND (user_id = 1) AND (status = 'Open')[0m
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) AND (duedate != '2018-03-21') ORDER BY title asc[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_header.html.erb (0.7ms)
+  Rendered home/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 54ms (Views: 46.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/home?column=description&direction=asc" for 127.0.0.1 at 2018-03-21 11:36:03 +0700
+Processing by HomeController#index as HTML
+  Parameters: {"column"=>"description", "direction"=>"asc"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-21') AND (user_id = 1) AND (status = 'Open')[0m
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) AND (duedate != '2018-03-21') ORDER BY description asc[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_header.html.erb (1.0ms)
+  Rendered home/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 58ms (Views: 50.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/home?column=title&direction=asc" for 127.0.0.1 at 2018-03-21 11:36:05 +0700
+Processing by HomeController#index as HTML
+  Parameters: {"column"=>"title", "direction"=>"asc"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-21') AND (user_id = 1) AND (status = 'Open')[0m
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) AND (duedate != '2018-03-21') ORDER BY title asc[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_header.html.erb (0.5ms)
+  Rendered home/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 47ms (Views: 42.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/home?column=title&direction=asc" for 127.0.0.1 at 2018-03-21 11:36:11 +0700
+Processing by HomeController#index as HTML
+  Parameters: {"column"=>"title", "direction"=>"asc"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-21') AND (user_id = 1) AND (status = 'Open')[0m
+  [1m[36mTask Load (24.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) AND (duedate =! '2018-03-21') ORDER BY title asc[0m
+Completed 401 Unauthorized in 52ms (ActiveRecord: 31.9ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedFunction: ERROR:  operator does not exist: date =! unknown
+LINE 1: ...".* FROM "tasks" WHERE (user_id = 1) AND (duedate =! '2018-0...
+                                                             ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+: SELECT "tasks".* FROM "tasks" WHERE (user_id = 1) AND (duedate =! '2018-03-21') ORDER BY title asc):
+  
+app/controllers/home_controller.rb:11:in `index'
+Started GET "/home?column=title&direction=asc" for 127.0.0.1 at 2018-03-21 11:36:22 +0700
+Processing by HomeController#index as HTML
+  Parameters: {"column"=>"title", "direction"=>"asc"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-21') AND (user_id = 1) AND (status = 'Open')[0m
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) AND (duedate != '2018-03-21') ORDER BY title asc[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_header.html.erb (0.8ms)
+  Rendered home/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 98ms (Views: 49.1ms | ActiveRecord: 11.1ms)
+
+
+Started GET "/home?column=title&direction=asc" for 127.0.0.1 at 2018-03-21 11:36:29 +0700
+Processing by HomeController#index as HTML
+  Parameters: {"column"=>"title", "direction"=>"asc"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-21') AND (user_id = 1) AND (status = 'Open')[0m
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) AND (duedate != '2018-03-21') ORDER BY title asc[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_header.html.erb (0.6ms)
+  Rendered home/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 67ms (Views: 61.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/home?column=title&direction=asc" for 127.0.0.1 at 2018-03-21 11:39:17 +0700
+Processing by HomeController#index as HTML
+  Parameters: {"column"=>"title", "direction"=>"asc"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-21') AND (user_id = 1) AND (status = 'Open')[0m
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) AND (duedate != '2018-03-21') ORDER BY title asc[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_header.html.erb (0.5ms)
+  Rendered home/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 56ms (Views: 49.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-21 11:47:02 +0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-03-21 11:47:02 +0700
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/home
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 34ms (ActiveRecord: 7.3ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-03-21 11:47:02 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-21') AND (user_id = 1) AND (status = 'Open')[0m
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) AND (duedate != '2018-03-21') ORDER BY title asc[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_header.html.erb (0.6ms)
+  Rendered home/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 431ms (Views: 408.7ms | ActiveRecord: 6.5ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-03-21 11:47:05 +0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"X3/RQTVMXOVF1XURsydQ+bkFNlmvBdkhmrrQ96Y0Zvs0xe3TUXOsl4UwaOvPwFx8MgberiQcZQU0+dvm/Vzhxg=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 19ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-21 11:47:05 +0700
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-03-21 11:47:05 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 57ms (Views: 53.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-03-21 11:47:18 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LPh+UWrBY2QdD27hxYqR6qRbT2/Q0TdiiEcICuNCLs3/4I+fZPpaONv/FvZECVamRqfoYjS43+buVxG8SllkXw==", "user"=>{"email"=>"muhamad43705@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "muhamad43705@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", "2018-03-21 04:47:18.450299"], ["last_sign_in_at", "2018-03-21 04:33:26.253800"], ["sign_in_count", 44], ["updated_at", "2018-03-21 04:47:18.451715"], ["id", 1]]
+  [1m[35m (10.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/home
+Completed 302 Found in 192ms (ActiveRecord: 12.2ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-03-21 11:47:18 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-21') AND (user_id = 1) AND (status = 'Open')[0m
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) AND (duedate != '2018-03-21') ORDER BY title asc[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_header.html.erb (0.5ms)
+  Rendered home/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 52ms (Views: 46.0ms | ActiveRecord: 1.8ms)
+
+
+Started DELETE "/tasks/24" for 127.0.0.1 at 2018-03-21 11:58:10 +0700
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TasksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"wpxHj8G+TeAxhYKeiBFBUHFPCaxWkYEqLOlLEkKrw3bfj1LGQKq9tsSwFxyd3nnUgNSs3iGoxrbblxv53VAJWQ==", "id"=>"24"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = $1[0m  [["id", 24]]
+  [1m[35m (10.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/home
+Completed 302 Found in 83ms (ActiveRecord: 23.4ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-03-21 11:58:10 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-21') AND (user_id = 1) AND (status = 'Open')[0m
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) AND (duedate != '2018-03-21') ORDER BY title asc[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_header.html.erb (0.6ms)
+  Rendered home/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 330ms (Views: 324.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-03-21 13:32:07 +0700
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-21') AND (user_id = 1) AND (status = 'Open')[0m
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) AND (duedate != '2018-03-21') ORDER BY title asc[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_header.html.erb (0.6ms)
+  Rendered home/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 384ms (Views: 326.7ms | ActiveRecord: 13.5ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-03-21 13:32:10 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-21') AND (user_id = 1) AND (status = 'Open')[0m
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) AND (duedate != '2018-03-21') ORDER BY title asc[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_header.html.erb (1.0ms)
+  Rendered home/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 75ms (Views: 68.4ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-03-21 13:32:13 +0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"opaEOSGGMTitf9ADS/c8a+nxo/+32xwa+vknxns0Wc+/hZFwoJLBblhKRYFeOATvGGoGjcDiW4YNh3ct5M+T4A=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 35ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-21 13:32:13 +0700
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-03-21 13:32:13 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 61ms (Views: 56.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-03-21 13:32:32 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j90Wa9XUB2Ubw8tWtLmWbOqHR4Ta/+ipy95bHw92EGVVBNIQ7ZEWj+tK5Af264xKpg5JWlzGVpNcZsIXVIK1lg==", "user"=>{"email"=>"muhamad43705@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "muhamad43705@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", "2018-03-21 06:32:33.082328"], ["last_sign_in_at", "2018-03-21 04:47:18.450299"], ["sign_in_count", 45], ["updated_at", "2018-03-21 06:32:33.083502"], ["id", 1]]
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/home
+Completed 302 Found in 218ms (ActiveRecord: 6.1ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-03-21 13:32:33 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-21') AND (user_id = 1) AND (status = 'Open')[0m
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) AND (duedate != '2018-03-21') ORDER BY title asc[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_header.html.erb (0.5ms)
+  Rendered home/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 58ms (Views: 52.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-03-21 13:38:06 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-21') AND (user_id = 1) AND (status = 'Open')[0m
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) AND (duedate != '2018-03-21') ORDER BY title asc[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_header.html.erb (0.9ms)
+  Rendered home/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 69ms (Views: 62.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-03-21 13:38:08 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-21') AND (user_id = 1) AND (status = 'Open')[0m
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) AND (duedate != '2018-03-21') ORDER BY title asc[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_header.html.erb (0.8ms)
+  Rendered home/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 55ms (Views: 48.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-03-21 13:41:09 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-21') AND (user_id = 1) AND (status = 'Open')[0m
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) AND (duedate != '2018-03-21') ORDER BY title asc[0m
+  Rendering home/index.html.haml within layouts/application
+  Rendered home/index.html.haml within layouts/application (3.3ms)
+Completed 401 Unauthorized in 11ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error ("else" is indented at wrong level: expected 4, but was at 6.):
+    19:       - @tasks_duetoday.each do |tasks_duetoday|
+    20:         - if tasks_duetoday.status == 'Open'
+    21:           %tr{:style => "color: blue;"}
+    22:             - else
+    23:               %tr
+    24:                 %td= tasks_duetoday.title
+    25:                 %td= tasks_duetoday.description
+  
+app/views/home/index.html.haml:22
+Started GET "/home" for 127.0.0.1 at 2018-03-21 13:42:51 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-21') AND (user_id = 1) AND (status = 'Open')[0m
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) AND (duedate != '2018-03-21') ORDER BY title asc[0m
+  Rendering home/index.html.haml within layouts/application
+  Rendered home/index.html.haml within layouts/application (2.2ms)
+Completed 401 Unauthorized in 11ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (The line was indented 4 levels deeper than the previous line.):
+    17:         %th.table-header Actions
+    18:     %tbody
+    19:       - @tasks_duetoday.each do |tasks_duetoday|
+    20:               %tr
+    21:                 %td= tasks_duetoday.title
+    22:                 %td= tasks_duetoday.description
+    23:                 %td= tasks_duetoday.duedate.strftime('%d-%m-%Y')
+  
+app/views/home/index.html.haml:20
+Started GET "/home" for 127.0.0.1 at 2018-03-21 13:43:13 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-21') AND (user_id = 1) AND (status = 'Open')[0m
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) AND (duedate != '2018-03-21') ORDER BY title asc[0m
+  Rendering home/index.html.haml within layouts/application
+  Rendered home/index.html.haml within layouts/application (2.2ms)
+Completed 401 Unauthorized in 10ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (Illegal nesting: nesting within plain text is illegal.):
+    17:         %th.table-header Actions
+    18:     %tbody
+    19:       @tasks_duetoday.each do |tasks_duetoday|
+    20:               %tr
+    21:                 %td= tasks_duetoday.title
+    22:                 %td= tasks_duetoday.description
+    23:                 %td= tasks_duetoday.duedate.strftime('%d-%m-%Y')
+  
+app/views/home/index.html.haml:20
+Started GET "/home" for 127.0.0.1 at 2018-03-21 13:43:28 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-21') AND (user_id = 1) AND (status = 'Open')[0m
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) AND (duedate != '2018-03-21') ORDER BY title asc[0m
+  Rendering home/index.html.haml within layouts/application
+  Rendered home/index.html.haml within layouts/application (2.0ms)
+Completed 401 Unauthorized in 9ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error ("else" is indented at wrong level: expected 4, but was at 6.):
+    19:       - @tasks_duetoday.each do |tasks_duetoday|
+    20:         - if tasks_duetoday.status == 'Open'
+    21:           %tr{:style => "color: blue;"}
+    22:             - else
+    23:               %tr
+    24:                 %td= tasks_duetoday.title
+    25:                 %td= tasks_duetoday.description
+  
+app/views/home/index.html.haml:22
+Started GET "/home" for 127.0.0.1 at 2018-03-21 13:43:54 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-21') AND (user_id = 1) AND (status = 'Open')[0m
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) AND (duedate != '2018-03-21') ORDER BY title asc[0m
+  Rendering home/index.html.haml within layouts/application
+  Rendered home/index.html.haml within layouts/application (2.4ms)
+Completed 401 Unauthorized in 9ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (The line was indented 3 levels deeper than the previous line.):
+    20:         - if tasks_duetoday.status == 'Open'
+    21:           %tr{:style => "color: blue;"}
+    22:         - else
+    23:               %tr
+    24:                 %td= tasks_duetoday.title
+    25:                 %td= tasks_duetoday.description
+    26:                 %td= tasks_duetoday.duedate.strftime('%d-%m-%Y')
+  
+app/views/home/index.html.haml:23
+Started GET "/home" for 127.0.0.1 at 2018-03-21 13:44:16 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-21') AND (user_id = 1) AND (status = 'Open')[0m
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) AND (duedate != '2018-03-21') ORDER BY title asc[0m
+  Rendering home/index.html.haml within layouts/application
+  Rendered home/index.html.haml within layouts/application (3.7ms)
+Completed 401 Unauthorized in 10ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error ("else" is indented at wrong level: expected 5, but was at 7.):
+    45:         - @tasks.each do |task|
+    46:           - if task.status == 'Open'
+    47:             %tr{:style => "color: blue;"}
+    48:               - else
+    49:                 %tr
+    50:                   %td= task.title
+    51:                   %td= task.description
+  
+app/views/home/index.html.haml:48
+Started GET "/home" for 127.0.0.1 at 2018-03-21 13:45:29 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-21') AND (user_id = 1) AND (status = 'Open')[0m
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) AND (duedate != '2018-03-21') ORDER BY title asc[0m
+  Rendering home/index.html.haml within layouts/application
+  Rendered home/index.html.haml within layouts/application (3.1ms)
+Completed 401 Unauthorized in 9ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error ("else" is indented at wrong level: expected 5, but was at 7.):
+    45:         - @tasks.each do |task|
+    46:           - if task.status == 'Open'
+    47:             %tr{:style => "color: blue;"}
+    48:               - else
+    49:                 %tr
+    50:                   %td= task.title
+    51:                   %td= task.description
+  
+app/views/home/index.html.haml:48
+Started GET "/home" for 127.0.0.1 at 2018-03-21 13:47:03 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-21') AND (user_id = 1) AND (status = 'Open')[0m
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) AND (duedate != '2018-03-21') ORDER BY title asc[0m
+  Rendering home/index.html.haml within layouts/application
+  Rendered home/index.html.haml within layouts/application (3.7ms)
+Completed 401 Unauthorized in 11ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error ("else" is indented at wrong level: expected 5, but was at 7.):
+    45:         - @tasks.each do |task|
+    46:           - if task.status == 'Open'
+    47:             %tr{:style => "color: blue;"}
+    48:               - else
+    49:                 %tr
+    50:                   %td= task.title
+    51:                   %td= task.description
+  
+app/views/home/index.html.haml:48
+Started GET "/home" for 127.0.0.1 at 2018-03-21 13:47:05 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-21') AND (user_id = 1) AND (status = 'Open')[0m
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) AND (duedate != '2018-03-21') ORDER BY title asc[0m
+  Rendering home/index.html.haml within layouts/application
+  Rendered home/index.html.haml within layouts/application (3.2ms)
+Completed 401 Unauthorized in 11ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error ("else" is indented at wrong level: expected 5, but was at 7.):
+    45:         - @tasks.each do |task|
+    46:           - if task.status == 'Open'
+    47:             %tr{:style => "color: blue;"}
+    48:               - else
+    49:                 %tr
+    50:                   %td= task.title
+    51:                   %td= task.description
+  
+app/views/home/index.html.haml:48
+Started GET "/home" for 127.0.0.1 at 2018-03-21 13:47:50 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-21') AND (user_id = 1) AND (status = 'Open')[0m
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) AND (duedate != '2018-03-21') ORDER BY title asc[0m
+  Rendering home/index.html.haml within layouts/application
+  Rendered home/index.html.haml within layouts/application (4.5ms)
+Completed 401 Unauthorized in 14ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (The line was indented 2 levels deeper than the previous line.):
+    47:             = %tr{:style => "color: blue;"}
+    48:           - else
+    49:             = %tr
+    50:                 %td= task.title
+    51:                 %td= task.description
+    52:                 %td= task.duedate.strftime('%d-%m-%Y')
+    53:                 %td= task.priority
+  
+app/views/home/index.html.haml:50
+Started GET "/home" for 127.0.0.1 at 2018-03-21 13:48:42 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-21') AND (user_id = 1) AND (status = 'Open')[0m
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) AND (duedate != '2018-03-21') ORDER BY title asc[0m
+  Rendering home/index.html.haml within layouts/application
+  Rendered home/index.html.haml within layouts/application (3.3ms)
+Completed 401 Unauthorized in 11ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (The line was indented 2 levels deeper than the previous line.):
+    47:             = %tr{:style => "color: blue;"}
+    48:           - else
+    49:             = %tr
+    50:                 %td= task.title
+    51:                 %td= task.description
+    52:                 %td= task.duedate.strftime('%d-%m-%Y')
+    53:                 %td= task.priority
+  
+app/views/home/index.html.haml:50
+Started GET "/home" for 127.0.0.1 at 2018-03-21 13:49:49 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-21') AND (user_id = 1) AND (status = 'Open')[0m
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) AND (duedate != '2018-03-21') ORDER BY title asc[0m
+  Rendering home/index.html.haml within layouts/application
+  Rendered home/index.html.haml within layouts/application (8.5ms)
+Completed 401 Unauthorized in 16ms (ActiveRecord: 1.5ms)
+
+
+  
+SyntaxError (/home/zoolee/Ruby/test/app/views/home/index.html.haml:21: unknown type of %string
+...aml::Helpers.html_escape((( %tr{:style => "color: blue;"}
+...                            ^~~
+/home/zoolee/Ruby/test/app/views/home/index.html.haml:21: syntax error, unexpected end-of-input
+...aml::Helpers.html_escape((( %tr{:style => "color: blue;"}
+...                            ^~~):
+  
+app/views/home/index.html.haml:21: unknown type of %string
+app/views/home/index.html.haml:21: syntax error, unexpected end-of-input
+Started GET "/home" for 127.0.0.1 at 2018-03-21 13:51:34 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-21') AND (user_id = 1) AND (status = 'Open')[0m
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) AND (duedate != '2018-03-21') ORDER BY title asc[0m
+  Rendering home/index.html.haml within layouts/application
+  Rendered home/_header.html.haml (2.7ms)
+  Rendered home/index.html.haml within layouts/application (16.1ms)
+Completed 200 OK in 68ms (Views: 63.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2018-03-21 13:51:46 +0700
+Processing by TasksController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering tasks/new.html.haml within layouts/application
+  Rendered tasks/new.html.haml within layouts/application (24.4ms)
+Completed 200 OK in 75ms (Views: 72.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tasks/23/edit" for 127.0.0.1 at 2018-03-21 13:52:19 +0700
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"23"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  Rendering tasks/edit.html.haml within layouts/application
+  Rendered tasks/edit.html.haml within layouts/application (8.1ms)
+Completed 200 OK in 82ms (Views: 52.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/tasks/23/edit" for 127.0.0.1 at 2018-03-21 13:52:24 +0700
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"23"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  Rendering tasks/edit.html.haml within layouts/application
+  Rendered tasks/edit.html.haml within layouts/application (10.4ms)
+Completed 200 OK in 74ms (Views: 68.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-03-21 13:52:45 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-21') AND (user_id = 1) AND (status = 'Open')[0m
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) AND (duedate != '2018-03-21') ORDER BY title asc[0m
+  Rendering home/index.html.haml within layouts/application
+  Rendered home/_header.html.haml (2.6ms)
+  Rendered home/index.html.haml within layouts/application (14.9ms)
+Completed 200 OK in 66ms (Views: 60.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/tasks/23/edit" for 127.0.0.1 at 2018-03-21 13:52:47 +0700
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"23"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  Rendering tasks/edit.html.haml within layouts/application
+  Rendered tasks/edit.html.haml within layouts/application (11.7ms)
+Completed 200 OK in 61ms (Views: 54.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/tasks/23/edit" for 127.0.0.1 at 2018-03-21 13:53:10 +0700
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"23"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  Rendering tasks/edit.html.haml within layouts/application
+  Rendered tasks/edit.html.haml within layouts/application (10.7ms)
+Completed 200 OK in 63ms (Views: 58.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2018-03-21 13:53:18 +0700
+Processing by TasksController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering tasks/new.html.haml within layouts/application
+  Rendered tasks/new.html.haml within layouts/application (9.7ms)
+Completed 200 OK in 72ms (Views: 67.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2018-03-21 13:57:06 +0700
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TasksController#new as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering tasks/new.html.haml within layouts/application
+  Rendered home/_header.html.haml (2.6ms)
+  Rendered tasks/new.html.haml within layouts/application (21.6ms)
+Completed 200 OK in 412ms (Views: 353.5ms | ActiveRecord: 12.6ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-03-21 13:57:14 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (duedate = '2018-03-21') AND (user_id = 1) AND (status = 'Open')[0m
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE (user_id = 1) AND (duedate != '2018-03-21') ORDER BY title asc[0m
+  Rendering home/index.html.haml within layouts/application
+  Rendered home/_header.html.haml (16.8ms)
+  Rendered home/index.html.haml within layouts/application (33.1ms)
+Completed 200 OK in 88ms (Views: 79.5ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/tasks/23/edit" for 127.0.0.1 at 2018-03-21 13:57:18 +0700
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"23"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  Rendering tasks/edit.html.haml within layouts/application
+  Rendered home/_header.html.haml (4.4ms)
+  Rendered tasks/edit.html.haml within layouts/application (15.6ms)
+Completed 200 OK in 69ms (Views: 59.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2018-03-21 13:57:28 +0700
+Processing by TasksController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering tasks/new.html.haml within layouts/application
+  Rendered home/_header.html.haml (4.5ms)
+  Rendered tasks/new.html.haml within layouts/application (16.6ms)
+Completed 200 OK in 65ms (Views: 61.4ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-03-21 13:57:32 +0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zvEMyOIvECJHJhUTtUxlsPDPLIqaTpnmmkB1zxv4jChoyuoSSrIYZRbgRMm8H6EiJhWgn1PTJGRBdETHT2QV6w=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-21 13:57:32 +0700
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-03-21 13:57:32 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.haml within layouts/application
+  Rendered devise/shared/_links.html.haml (3.6ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (17.6ms)
+Completed 200 OK in 73ms (Views: 67.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2018-03-21 13:57:34 +0700
+Processing by TasksController#new as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-03-21 13:57:34 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.haml within layouts/application
+  Rendered devise/shared/_links.html.haml (2.7ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (8.5ms)
+Completed 200 OK in 56ms (Views: 55.1ms | ActiveRecord: 0.0ms)
+
+

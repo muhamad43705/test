@@ -4,9 +4,12 @@ class HomeController < ApplicationController
 	helper_method :sort_column, :sort_direction
 	
 	def index
-		@tasks = Task.where("user_id = #{current_user.id}").order("#{sort_column} #{sort_direction}")
     @tasks_duetoday = Task.where("duedate = '#{Date.today.strftime('%Y-%m-%d')}'").where("user_id = #{current_user.id}").where("status = 'Open'")
     flash[:alert] = "You have #{@tasks_duetoday.length} tasks open duetoday"
+
+		@tasks = Task.where("user_id = #{current_user.id}").where("duedate != '#{Date.today.strftime('%Y-%m-%d')}'").order("#{sort_column} #{sort_direction}")
+    @message = "You have #{@tasks.length} tasks"
+    
 	end
 
 private

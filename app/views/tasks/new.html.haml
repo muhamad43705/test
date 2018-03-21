@@ -1,0 +1,31 @@
+= render "home/header"
+#form-wrapper
+  %h2.title-form Create Task
+  - if @task.errors.any?
+    .notice
+      - @task.errors.full_messages.each do |message|
+        %div= message
+  = form_for(@task) do |f|
+    = f.hidden_field :user_id, value: current_user.id
+    .field
+      = f.label :Status
+      %br/
+      = f.select(:status, Task::STATUS_LIST)
+    .field
+      = f.label :Priority
+      %br/
+      = f.select(:priority, Task::PRIORITY_LIST)
+    .field
+      = f.label :Duedate
+      %br/
+      = f.text_field :duedate, :id => 'datepicker', :value => Date.today.strftime('%d-%m-%Y')
+    .field
+      = f.label :Title
+      %br/
+      = f.text_field :title, autofocus: true
+    .field
+      = f.label :Description
+      %br/
+      = f.text_area :description
+    .actions
+      = f.submit "Save"
