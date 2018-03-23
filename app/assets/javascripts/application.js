@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require_tree .
 //= require jquery-ui/datepicker
+//= require select2-full
 

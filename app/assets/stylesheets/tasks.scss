@@ -9,3 +9,18 @@
 .table-data{
 	text-align: center;
 }
+
+#select-status .select2-container {
+  pointer-events: none;
+  touch-action: none;
+
+  .select2-selection {
+    background: #eee;
+    box-shadow: none;
+  }
+
+  .select2-selection__arrow,
+  .select2-selection__clear {
+    display: none;
+  }
+}

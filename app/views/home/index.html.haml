@@ -9,15 +9,15 @@
   %table.table.table-bordered.table-striped
     %thead
       %tr
-        %th= sort_link "title"
-        %th= sort_link "description"
-        %th= sort_link "duedate"
-        %th= sort_link "priority"
-        %th= sort_link "status"
-        %th.table-header Actions
+        %th.table-header{:style => "width: 210px"}Title
+        %th.table-header{:style => "width: 460px"}Description
+        %th.table-header{:style => "width: 80px"}Duedate
+        %th.table-header{:style => "width: 60px"}Priority
+        %th.table-header{:style => "width: 60px"}Status
+        %th.table-header{:style => "width: 110px"} Actions
     %tbody
       - @tasks_duetoday.each do |tasks_duetoday|
-        %tr
+        %tr{class:("open" if tasks_duetoday.status == "Open")}
           %td= tasks_duetoday.title
           %td= tasks_duetoday.description
           %td= tasks_duetoday.duedate.strftime('%d-%m-%Y')
@@ -25,22 +25,22 @@
           %td= tasks_duetoday.status
           %td.table-data
             = link_to 'View/Edit', {controller: 'tasks', action: 'edit', id: tasks_duetoday.id}
-            |  #{link_to 'Delete', {controller: 'tasks', action: 'destroy', id: tasks_duetoday.id}, method: :delete}
+            |  #{link_to 'Delete', {controller: 'tasks', action: 'destroy', id: tasks_duetoday.id}, method: :delete, data: {confirm: "Are you sure?"}}
   %div{:style => "height: 20px;"}
     %div{:style => "margin-bottom: 20px"}
       %p.alert= @message
     %table.table.table-bordered.table-striped
       %thead
         %tr
-          %th= sort_link "title"
-          %th= sort_link "description"
-          %th= sort_link "duedate"
-          %th= sort_link "priority"
-          %th= sort_link "status"
-          %th.table-header Actions
+          %th{:style => "width: 210px"}= sort_link "title"
+          %th{:style => "width: 460px"}= sort_link "description"
+          %th{:style => "width: 80px"}= sort_link "duedate"
+          %th{:style => "width: 60px"}= sort_link "priority"
+          %th{:style => "width: 60px"}= sort_link "status"
+          %th.table-header{:style => "width: 110px"} Actions
       %tbody
         - @tasks.each do |task|
-          %tr
+          %tr{:class => [cycle('even', 'odd'), ("open" if task.status == "Open")]}
             %td= task.title
             %td= task.description
             %td= task.duedate.strftime('%d-%m-%Y')
@@ -48,4 +48,4 @@
             %td= task.status
             %td.table-data
               = link_to 'View/Edit', {controller: 'tasks', action: 'edit', id: task.id}
-              |  #{link_to 'Delete', {controller: 'tasks', action: 'destroy', id: task.id}, method: :delete}
+              |  #{link_to 'Delete', {controller: 'tasks', action: 'destroy', id: task.id}, method: :delete, data: {confirm: "Are you sure?"}}

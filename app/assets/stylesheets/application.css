@@ -13,6 +13,8 @@
  *= require_tree .	
  *= require_self
  *= require jquery-ui/datepicker
+ *= require select2
+ *= require select2-bootstrap
  */
 
 /*font*/
@@ -90,7 +92,7 @@ a{
 	margin-bottom: 100px;
 }
 
-input[type=email], input[type=password], input[type=text], textarea, select {
+input[type=email], input[type=password], input[type=text], textarea, select{
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -98,6 +100,10 @@ input[type=email], input[type=password], input[type=text], textarea, select {
     border: 1px solid #ccc;
     box-sizing: border-box;
     border-radius: 4px;
+}
+
+.select2 {
+	margin: 8px 0 !important;
 }
 
 textarea {
@@ -149,3 +155,15 @@ input[type=submit]:hover, button:hover {
 	float: right;
 	margin-bottom: 10px;
 }
+
+.open {
+	color: blue;
+}
+
+.even {
+	background-color: #f1f1f2 !important;
+}
+
+.select2({
+    theme: "bootstrap"
+});
