@@ -7,6 +7,6 @@ $(document).on "turbolinks:load", ->
 		$('#datepicker').datepicker(
 	    dateFormat: 'dd-mm-yy'
 		);
-	$('#task_status, #task_priority').select2 
-  	theme: 'bootstrap' 
+		$('#task_status, #task_priority').select2 
+	  	theme: 'bootstrap' 
 

@@ -17,7 +17,7 @@
         %th.table-header{:style => "width: 110px"} Actions
     %tbody
       - @tasks_duetoday.each do |tasks_duetoday|
-        %tr{class:("open" if tasks_duetoday.status == "Open")}
+        %tr{:class => [cycle('even', 'odd'), ("open" if task.status == "Open")]}
           %td= tasks_duetoday.title
           %td= tasks_duetoday.description
           %td= tasks_duetoday.duedate.strftime('%d-%m-%Y')
@@ -28,7 +28,14 @@
             |  #{link_to 'Delete', {controller: 'tasks', action: 'destroy', id: tasks_duetoday.id}, method: :delete, data: {confirm: "Are you sure?"}}
   %div{:style => "height: 20px;"}
     %div{:style => "margin-bottom: 20px"}
-      %p.alert= @message
+    %p.alert= @message
+    %div{:style => "width: 30%; float: right;"}
+      = form_tag home_path, :method => 'get' do
+        %div{:style => "width: 180px; float: left;"}
+          = text_field_tag :search, params[:search], :placeholder => "Search Title"
+        %div{:style => "width: 100px; float: right;"}
+          = submit_tag "Search"
+    
     %table.table.table-bordered.table-striped
       %thead
         %tr
@@ -49,3 +56,5 @@
             %td.table-data
               = link_to 'View/Edit', {controller: 'tasks', action: 'edit', id: task.id}
               |  #{link_to 'Delete', {controller: 'tasks', action: 'destroy', id: task.id}, method: :delete, data: {confirm: "Are you sure?"}}
+
+    = will_paginate @tasks
